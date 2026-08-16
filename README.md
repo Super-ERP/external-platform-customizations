@@ -41,6 +41,48 @@ pnpm verify
 
 The API key is tenant-scoped and is never committed. Bootstrap stores the template in the production database; assignment is a separate account-scoped API call, so a template can be staged before it is enabled for an account.
 
+## Vendor workflow
+
+Edit only the selected template, stylesheet, and fixture under `modules/quotation/`. Keep the tenant logo dynamic through `{{logoUrl}}`; fixture logo data is preview-only.
+
+Validate and test before rendering:
+
+```bash
+rtk pnpm test
+rtk pnpm validate
+```
+
+Render standalone A4 HTML, or set `CHROME_BIN` to render matching PDFs too:
+
+```bash
+export CHROME_BIN="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+rtk pnpm render -- --out-dir artifacts/quotation-fixtures
+```
+
+Stage templates without changing the tenant default:
+
+```bash
+rtk pnpm bootstrap:templates
+```
+
+Stage only selected template, then activate it as explicit tenant default:
+
+```bash
+QUOTATION_TEMPLATE_CODE="citruscloud" rtk pnpm bootstrap:defaults
+```
+
+`bootstrap:defaults` rejects an empty or unknown code before making API requests.
+
+Verify both stored source and active tenant default:
+
+```bash
+QUOTATION_TEMPLATE_CODE="citruscloud" rtk pnpm verify
+```
+
+To roll back, run `bootstrap:defaults` again with last approved code. Clear a tenant default through CRM admin tooling when no fallback template should apply.
+
+An account-level template override still takes priority over the tenant default.
+
 ## Layout
 
 - `modules/quotation/manifest.json` - package/module metadata.

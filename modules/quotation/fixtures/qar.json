@@ -1,0 +1,35 @@
+{
+  "quotationTemplateCode": "qarmour",
+  "context": {
+    "logoUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDAgMTQwIj48Y2lyY2xlIGN4PSI3MCIgY3k9IjcwIiByPSI0OCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNjkwMGE4IiBzdHJva2Utd2lkdGg9IjI0IiBzdHJva2UtZGFzaGFycmF5PSIyMTAgOTIiIHRyYW5zZm9ybT0icm90YXRlKDIyIDcwIDcwKSIvPjxwYXRoIGQ9Ik03MiAxMTdDMTAxIDExMSAxMjEgODkgMTIzIDYyTDk5IDc1Qzk1IDg4IDg1IDk3IDcwIDEwMFoiIGZpbGw9IiMwMDhmYzUiLz48cGF0aCBkPSJNOTUgMjlDMTA5IDQwIDExOCA1MyAxMjEgNjhMMTAxIDc3QzEwMSA2MSA5NCA0OSA4MiA0MVoiIGZpbGw9IiNlZjU4NGQiLz48L3N2Zz4=",
+    "entityName": "Q ARMOUR SDN BHD",
+    "entityRegistrationNo": "202301022845 (1516768 A)",
+    "companyAddress": "A-08-01 & 02, EKOCHERAS, NO. 693, JALAN CHERAS BATU 5,\n56000 KUALA LUMPUR.",
+    "companyPhone": "",
+    "companyEmail": "",
+    "quoteNumber": "",
+    "quoteDate": "",
+    "currency": "RM",
+    "customerName": "",
+    "customerCode": "",
+    "customerContact": "",
+    "customerPhone": "",
+    "customerEmail": "",
+    "delivery": "",
+    "paymentTerm": "",
+    "quoteValidity": "",
+    "price": "",
+    "subtotal": "-",
+    "taxTotal": "-",
+    "total": "-",
+    "preparedBy": "",
+    "lines": [
+      {
+        "description": "",
+        "quantity": "",
+        "unitPrice": "",
+        "lineTotal": ""
+      }
+    ]
+  }
+}

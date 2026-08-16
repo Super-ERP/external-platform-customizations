@@ -3,8 +3,12 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "test": "node --test",
     "validate": "node scripts/validate-quotation-templates.mjs",
+    "render": "node scripts/render-quotation-fixtures.mjs",
     "bootstrap": "pnpm validate && node scripts/bootstrap-quotation-templates.mjs apply",
+    "bootstrap:templates": "pnpm validate && node scripts/bootstrap-quotation-templates.mjs templates",
+    "bootstrap:defaults": "pnpm validate && node scripts/bootstrap-quotation-templates.mjs defaults",
     "verify": "node scripts/verify-quotation-templates.mjs"
   },
   "engines": {

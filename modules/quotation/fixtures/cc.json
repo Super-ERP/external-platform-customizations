@@ -1,0 +1,42 @@
+{
+  "quotationTemplateCode": "citruscloud",
+  "context": {
+    "logoUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MDAgMTMwIj48ZyBmaWxsPSJub25lIiBzdHJva2U9IiNkZjgwNmYiIHN0cm9rZS13aWR0aD0iMTAiPjxwYXRoIGQ9Ik02NiAxMTFDOCA3MiAyNyA5IDY2IDM0QzEwNSA5IDEyNCA3MiA2NiAxMTFaIi8+PHBhdGggZD0iTTY2IDk0QzM5IDcxIDQ4IDM3IDY2IDUxQzg0IDM3IDkzIDcxIDY2IDk0WiIvPjwvZz48dGV4dCB4PSIxMjgiIHk9Ijk0IiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSI3MiIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iI2ViYTkyZCI+Q0lUUlVTPC90ZXh0Pjwvc3ZnPg==",
+    "entityName": "CITRUS CLOUD SDN BHD",
+    "entityRegistrationNo": "202201014400 (1460097-U)",
+    "companyAddress": "A-08-01, EKOCHERAS, NO. 693, JALAN CHERAS BATU 5,\n56000 KUALA LUMPUR.",
+    "companyPhone": "+603-2857 8098",
+    "companyEmail": "contact@quandatics.com",
+    "companyWebsite": "www.quandatics.com",
+    "quoteNumber": "Q30CC-0030CQ-01",
+    "quoteDate": "04/08/2026",
+    "currency": "MYR",
+    "customerName": "QUANDATICS (M) SDN BHD",
+    "customerCode": "A-08-01, Ekocheras No. 693, Jln Cheras, Batu 5, 56000 Kuala Lumpur",
+    "customerContact": "Finance Team",
+    "customerEmail": "",
+    "projectName": "Citrus Gitlab Professional Services",
+    "delivery": "14 working-days upon PO",
+    "paymentTerm": "45 days",
+    "quoteValidity": "60 days",
+    "price": "DDP MAL, MYR",
+    "subtotal": "36,000.00",
+    "taxLabel": "SST @ 8%",
+    "taxTotal": "-",
+    "total": "36,000.00",
+    "notes": "- All prices quoted are in MYR and is net to Citrus Cloud. Excluded merchant, bank\ncharges or additional taxation.",
+    "preparedBy": "Angeline Cheah",
+    "preparedByEmail": "angeline@citrustribe.com",
+    "lines": [
+      {
+        "sku": "",
+        "description": "Professional services\nGitlab Services\nBeing charged for the final progressive claim for the\nfollowing item:\nSupport and Maintenance\n·SaaS - Ultimate 1 Year\nS&M: 13/08/2025 to 12/08/2026",
+        "quantity": "1",
+        "uom": "lot",
+        "unitPrice": "36,000.00",
+        "lineSubtotal": "36,000.00",
+        "lineTotal": "36,000.00"
+      }
+    ]
+  }
+}

@@ -1,29 +1,44 @@
-.q-template--qar { position: relative; min-height: 297mm; padding: 10mm; color: #000; font: 10px/1.35 Arial, Helvetica, sans-serif; }
-.q-template--qar .q-header { display: grid; grid-template-columns: 29% 1fr; gap: 6mm; align-items: start; padding-bottom: 3mm; }
-.q-template--qar .q-logo { height: 24mm; }
-.q-template--qar .q-logo img { width: 55mm; height: 22mm; object-fit: contain; object-position: left; }
-.q-template--qar .q-company__name { font-size: 13px; font-weight: 700; text-transform: uppercase; }
+.q-template--qar,
+.q-template--qar * { box-sizing: border-box; }
+.q-template--qar { position: relative; width: 210mm; min-height: 297mm; padding: 15mm 21mm 15mm 18mm; color: #000; background: #fff; font: 9px/1.25 Arial, Helvetica, sans-serif; }
+.q-template--qar .q-header { display: grid; grid-template-columns: 18mm 1fr; gap: 8mm; align-items: start; height: 26mm; padding: 0 0 2mm 25mm; border-bottom: 1px solid #000; }
+.q-template--qar .q-logo img { display: block; width: 18mm; height: 18mm; object-fit: contain; object-position: center; }
+.q-template--qar .q-company { padding-top: 0.5mm; }
+.q-template--qar .q-company__name { font-size: 10px; font-weight: 700; text-transform: uppercase; }
 .q-template--qar .q-company__address { white-space: pre-line; text-transform: uppercase; }
-.q-template--qar .q-title { margin: 0; border-block: 1px solid #000; padding: 1mm 0; text-align: center; font-size: 16px; }
-.q-template--qar .q-customer-meta { display: grid; grid-template-columns: 68% 32%; border-bottom: 1px solid #000; }
-.q-template--qar .q-customer { position: relative; min-height: 42mm; border-right: 1px solid #000; padding: 2mm 9mm; }
-.q-template--qar .q-customer__to { position: absolute; left: 1mm; top: 2mm; }
-.q-template--qar .q-customer dl { position: absolute; left: 1mm; bottom: 2mm; display: grid; grid-template-columns: 30mm 1fr; gap: 1mm; margin: 0; }
-.q-template--qar .q-customer dd, .q-template--qar .q-meta dd { margin: 0; }
-.q-template--qar .q-meta { display: grid; grid-template-columns: 38mm 1fr; gap: 1mm 4mm; margin: 2mm; }
-.q-template--qar .q-lines { width: 100%; border-collapse: collapse; table-layout: fixed; font-size: 10px; }
-.q-template--qar .q-lines th { height: 10mm; border-bottom: 1px solid #000; font-weight: 400; }
-.q-template--qar .q-lines th:first-child, .q-template--qar .q-lines th:nth-child(2) { text-align: left; }
-.q-template--qar .q-lines th:nth-child(3), .q-template--qar .q-lines th:nth-child(4), .q-template--qar .q-lines th:nth-child(5) { text-align: right; }
-.q-template--qar .q-lines td { height: 10mm; border-bottom: 1px solid #000; padding: 1mm; vertical-align: top; }
-.q-template--qar .q-lines th:nth-child(1), .q-template--qar .q-lines td:nth-child(1) { width: 8%; }
-.q-template--qar .q-lines th:nth-child(2), .q-template--qar .q-lines td:nth-child(2) { width: 44%; }
+.q-template--qar .q-title { height: 8mm; margin: 0; padding-top: 0.8mm; text-align: center; font-size: 16px; line-height: 1; }
+.q-template--qar .q-customer-meta { display: grid; grid-template-columns: 63% 37%; height: 42mm; }
+.q-template--qar .q-customer { position: relative; }
+.q-template--qar .q-customer::before { position: absolute; inset: 0 16mm 2mm 6.5mm; background: linear-gradient(#000, #000) left top / 10mm 1px no-repeat, linear-gradient(#000, #000) right top / 21mm 1px no-repeat, linear-gradient(#000, #000) left bottom / 10mm 1px no-repeat, linear-gradient(#000, #000) right bottom / 21mm 1px no-repeat, linear-gradient(#000, #000) left top / 1px 5mm no-repeat, linear-gradient(#000, #000) right top / 1px 5mm no-repeat, linear-gradient(#000, #000) left bottom / 1px 5mm no-repeat, linear-gradient(#000, #000) right bottom / 1px 5mm no-repeat; content: ""; }
+.q-template--qar .q-customer__recipient { position: absolute; top: 1.5mm; right: 17mm; left: 7.5mm; display: grid; grid-template-columns: 20mm 1fr; }
+.q-template--qar .q-customer__recipient strong,
+.q-template--qar .q-customer__recipient div > span { display: block; }
+.q-template--qar .q-customer__fields { position: absolute; right: 17mm; bottom: 3mm; left: 7.5mm; }
+.q-template--qar .q-customer__fields > div { display: grid; grid-template-columns: 20mm 1fr; min-height: 5mm; }
+.q-template--qar .q-meta { padding-top: 1.5mm; }
+.q-template--qar .q-meta > div { display: grid; grid-template-columns: 24mm 3mm 1fr; min-height: 5.7mm; }
+.q-template--qar .q-lines { width: 100%; height: 128mm; border: 1px solid #000; border-bottom: 3px double #000; border-collapse: collapse; table-layout: fixed; }
+.q-template--qar .q-lines th,
+.q-template--qar .q-lines td { border-right: 1px solid #000; padding: 1mm; font-weight: 400; }
+.q-template--qar .q-lines th:last-child,
+.q-template--qar .q-lines td:last-child { border-right: 0; }
+.q-template--qar .q-lines thead { height: 9mm; }
+.q-template--qar .q-lines thead th { border-bottom: 1px solid #000; text-align: right; vertical-align: middle; }
+.q-template--qar .q-lines thead th:first-child { text-align: center; }
+.q-template--qar .q-lines thead th:nth-child(2) { text-align: center; }
+.q-template--qar .q-lines tbody { height: 95mm; }
+.q-template--qar .q-lines tbody td { text-align: right; vertical-align: top; white-space: pre-line; }
+.q-template--qar .q-lines tbody td:first-child { text-align: center; }
+.q-template--qar .q-lines tbody td:nth-child(2) { text-align: left; }
+.q-template--qar .q-lines__fill { height: 100%; }
+.q-template--qar .q-lines tfoot { height: 24mm; border-top: 1px solid #000; }
+.q-template--qar .q-lines tfoot tr { height: 8mm; }
+.q-template--qar .q-lines tfoot th,
+.q-template--qar .q-lines tfoot td { text-align: right; vertical-align: middle; }
+.q-template--qar .q-lines th:nth-child(1), .q-template--qar .q-lines td:nth-child(1) { width: 4%; }
+.q-template--qar .q-lines th:nth-child(2), .q-template--qar .q-lines td:nth-child(2) { width: 48%; }
 .q-template--qar .q-lines th:nth-child(3), .q-template--qar .q-lines td:nth-child(3) { width: 12%; }
 .q-template--qar .q-lines th:nth-child(4), .q-template--qar .q-lines td:nth-child(4) { width: 16%; }
 .q-template--qar .q-lines th:nth-child(5), .q-template--qar .q-lines td:nth-child(5) { width: 20%; }
-.q-template--qar .q-total-block { display: flex; min-height: 29mm; border-bottom: 1px solid #000; }
-.q-template--qar .q-notes { flex: 1; padding: 4mm 8mm; white-space: pre-line; }
-.q-template--qar .q-totals { display: grid; grid-template-columns: 1fr 32mm; width: 42%; border-top: 1px solid #000; margin: 0; }
-.q-template--qar .q-totals dt, .q-template--qar .q-totals dd { margin: 0; border-bottom: 1px solid #000; padding: 2mm; text-align: right; }
-.q-template--qar .q-reference { padding-top: 2mm; font-weight: 700; }
-.q-template--qar .q-disclaimer { padding-top: 2mm; font-style: italic; }
+.q-template--qar .q-reference { margin-top: 3mm; font-weight: 700; }
+.q-template--qar .q-disclaimer { margin: 0.6mm 0 0; font-size: 8px; font-style: italic; }

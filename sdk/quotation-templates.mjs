@@ -24,6 +24,9 @@ export function createQuotationTemplateClient({ baseUrl, apiKey, fetchImpl = fet
 
   return {
     list: () => request("GET", "/api/v1/quotation-templates"),
+    getDefault: () => request("GET", "/api/v1/quotation-templates/default"),
+    setDefault: (quotationTemplateCode) =>
+      request("PATCH", "/api/v1/quotation-templates/default", { quotationTemplateCode }),
     get: async (code) => {
       try {
         return await request("GET", `/api/v1/quotation-templates/${encodeURIComponent(code)}`)

@@ -18,6 +18,8 @@ if (!API || !API_KEY) {
 const mode = process.argv[2] || "apply"
 const applyTemplates = mode === "apply" || mode === "templates"
 const applyAssignments = mode === "apply" || mode === "assignments"
+const applyDefaults = mode === "defaults"
+const defaultTemplateCode = process.env.QUOTATION_TEMPLATE_CODE || ""
 const client = createQuotationTemplateClient({ baseUrl: API, apiKey: API_KEY })
 
 const templates = JSON.parse(
@@ -59,8 +61,25 @@ async function assignTemplate({ accountId, quotationTemplateCode }) {
 }
 
 async function main() {
-  if (applyTemplates) {
+  if (applyDefaults && !defaultTemplateCode) {
+    throw new Error("QUOTATION_TEMPLATE_CODE is required for defaults mode")
+  }
+  const defaultTemplate = applyDefaults
+    ? templates.find((template) => template.code === defaultTemplateCode)
+    : null
+  if (applyDefaults && !defaultTemplate) {
+    throw new Error("QUOTATION_TEMPLATE_CODE must match a configured template code")
+  }
+
+  if (applyDefaults) {
+    await upsertTemplate(defaultTemplate)
+  } else if (applyTemplates) {
     for (const def of templates) await upsertTemplate(def)
+  }
+
+  if (applyDefaults) {
+    await client.setDefault(defaultTemplateCode)
+    console.log(`default: ${defaultTemplateCode}`)
   }
 
   if (applyAssignments) {

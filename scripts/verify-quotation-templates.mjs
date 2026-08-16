@@ -5,6 +5,7 @@ import path from "node:path"
 const repoRoot = path.resolve(process.cwd())
 const API = (process.env.CRM_API_BASE_URL || "").replace(/\/$/, "")
 const API_KEY = process.env.CRM_API_KEY || ""
+const expectedDefaultCode = process.env.QUOTATION_TEMPLATE_CODE || ""
 
 if (!API || !API_KEY) {
   console.error("Missing CRM_API_BASE_URL and/or CRM_API_KEY")
@@ -54,6 +55,22 @@ async function run() {
     console.log("Template definitions aligned.")
   }
 
+  if (expectedDefaultCode) {
+    const defaultCheck = await call("GET", "/api/v1/quotation-templates/default")
+    if (defaultCheck.status !== 200) {
+      console.error(`Default check failed: ${defaultCheck.status}`)
+      process.exitCode = 1
+    } else {
+      const actualDefaultCode = defaultCheck.body?.data?.quotationTemplateCode ?? null
+      if (actualDefaultCode !== expectedDefaultCode) {
+        console.error(`Default mismatch: expected ${expectedDefaultCode} / got ${actualDefaultCode}`)
+        process.exitCode = 1
+      } else {
+        console.log(`default ok: ${expectedDefaultCode}`)
+      }
+    }
+  }
+
   for (const assignment of assignments.filter((row) => !row.accountId?.startsWith("REPLACE_WITH_"))) {
     const check = await call(
       "GET",
@@ -78,4 +95,3 @@ run().catch((error) => {
   console.error(error instanceof Error ? error.message : String(error))
   process.exit(1)
 })
-
