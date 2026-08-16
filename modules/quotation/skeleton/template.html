@@ -1,0 +1,20 @@
+<div class="q-template q-template--new-pattern">
+  <header>
+    <img src="{{logoUrl}}" alt="{{entityName}}">
+    <h1>QUOTATION</h1>
+    <p>{{entityName}} {{entityRegistrationNo}}</p>
+    <p>{{companyAddress}}</p>
+  </header>
+  <section>
+    <p>Reference: {{quoteNumber}}</p>
+    <p>Date: {{quoteDate}}</p>
+    <p>Customer: {{customerName}}</p>
+    <p>Attention: {{customerContact}}</p>
+  </section>
+  <table>
+    <thead><tr><th>No</th><th>Description</th><th>Qty</th><th>Total</th></tr></thead>
+    <tbody>{{#each lines}}<tr><td>{{@index}}</td><td>{{description}}</td><td>{{quantity}}</td><td>{{lineTotal}}</td></tr>{{/each}}</tbody>
+  </table>
+  <section><p>Subtotal: {{subtotal}}</p><p>{{taxLabel}}: {{taxTotal}}</p><p>Total: {{total}}</p></section>
+  <footer>{{notes}}</footer>
+</div>

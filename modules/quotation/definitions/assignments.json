@@ -1,0 +1,13 @@
+{
+  "assignments": [
+    {
+      "accountId": "REPLACE_WITH_QAR_ACCOUNT_ID",
+      "quotationTemplateCode": "qarmour"
+    },
+    {
+      "accountId": "REPLACE_WITH_CC_ACCOUNT_ID",
+      "quotationTemplateCode": "citruscloud"
+    }
+  ]
+}
+

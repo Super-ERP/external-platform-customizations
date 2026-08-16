@@ -1,0 +1,13 @@
+{
+  "name": "@super-erp/quotation-template-customizations",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "validate": "node scripts/validate-quotation-templates.mjs",
+    "bootstrap": "node scripts/bootstrap-quotation-templates.mjs apply",
+    "verify": "node scripts/verify-quotation-templates.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

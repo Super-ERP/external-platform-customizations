@@ -1,0 +1,15 @@
+<div class="q-template q-template--qar">
+  <header class="q-header">
+    <div class="q-logo"><img src="{{logoUrl}}" alt="{{entityName}}"></div>
+    <div class="q-company"><div class="q-company__name">{{entityName}} {{entityRegistrationNo}}</div><div class="q-company__address">{{companyAddress}}</div><div>Tel: {{companyPhone}} &nbsp; Email: {{companyEmail}}</div></div>
+  </header>
+  <h1 class="q-title">QUOTATION</h1>
+  <section class="q-customer-meta">
+    <div class="q-customer"><div class="q-customer__to">To:</div><strong>{{customerName}}</strong><div class="q-customer__address">{{customerCode}}</div><dl><dt>Attn:</dt><dd>{{customerContact}}</dd><dt>Tel:</dt><dd>{{customerPhone}}</dd><dt>Email:</dt><dd>{{customerEmail}}</dd><dt>Project:</dt><dd>{{projectName}}</dd></dl></div>
+    <dl class="q-meta"><dt>Ref. No</dt><dd>{{quoteNumber}}</dd><dt>Date</dt><dd>{{quoteDate}}</dd><dt>Currency</dt><dd>{{currency}}</dd><dt>Delivery</dt><dd>{{delivery}}</dd><dt>Payment Term</dt><dd>{{paymentTerm}}</dd><dt>Quote Validity</dt><dd>{{quoteValidity}}</dd><dt>Price</dt><dd>{{price}}</dd></dl>
+  </section>
+  <table class="q-lines"><thead><tr><th>No</th><th>Description</th><th>QTY</th><th>Unit Price</th><th>Total Price</th></tr></thead><tbody>{{#each lines}}<tr><td>{{@index}}</td><td>{{description}}</td><td>{{quantity}}</td><td>{{unitPrice}}</td><td>{{lineTotal}}</td></tr>{{/each}}</tbody></table>
+  <section class="q-total-block"><div class="q-notes">Note:<br>{{notes}}</div><dl class="q-totals"><dt>Total ({{currency}})</dt><dd>{{subtotal}}</dd><dt>SST ({{currency}})</dt><dd>{{taxTotal}}</dd><dt>Total with SST ({{currency}})</dt><dd>{{total}}</dd></dl></section>
+  <div class="q-reference">**Please Quote Our Reference Number When Placing An Order**</div>
+  <p class="q-disclaimer">This Quotation is computer generated and no signature is required.</p>
+</div>

@@ -1,0 +1,25 @@
+{
+  "templates": [
+    {
+      "code": "qarmour",
+      "label": "QAR",
+      "legacyTemplateCode": "qar",
+      "renderMode": "html",
+      "notes": "Custom QAR quotation style.",
+      "isActive": true,
+      "templateFile": "modules/quotation/templates/qar/template.html",
+      "cssFile": "modules/quotation/templates/qar/styles.css"
+    },
+    {
+      "code": "citruscloud",
+      "label": "CC",
+      "legacyTemplateCode": "cc",
+      "renderMode": "html",
+      "notes": "Custom CC quotation style.",
+      "isActive": true,
+      "templateFile": "modules/quotation/templates/cc/template.html",
+      "cssFile": "modules/quotation/templates/cc/styles.css"
+    }
+  ]
+}
+

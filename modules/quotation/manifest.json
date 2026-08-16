@@ -1,0 +1,18 @@
+{
+  "module": "quotation-template-packs",
+  "version": "1.1.0",
+  "name": "crm-v2 quotation template packs",
+  "description": "External quotation-template customizations for crm-v2 (html/css templates + account assignments).",
+  "supportedEntity": "crm-v2",
+  "scope": "quotation-template",
+  "api": {
+    "base": "/api/v1/quotation-templates",
+    "assignment": "/api/v1/accounts/{accountId}/quotation-template-code"
+  },
+  "runtime": "api-published-html-css",
+  "compatibility": {
+    "placeholderEngine": "quotation-v1",
+    "javascript": false,
+    "maxTemplateBytes": 200000
+  }
+}
