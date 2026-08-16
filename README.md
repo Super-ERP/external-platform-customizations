@@ -65,11 +65,13 @@ Stage templates without changing the tenant default:
 rtk pnpm bootstrap:templates
 ```
 
-Stage all templates, then activate an explicit tenant default:
+Stage only selected template, then activate it as explicit tenant default:
 
 ```bash
 QUOTATION_TEMPLATE_CODE="citruscloud" rtk pnpm bootstrap:defaults
 ```
+
+`bootstrap:defaults` rejects an empty or unknown code before making API requests.
 
 Verify both stored source and active tenant default:
 

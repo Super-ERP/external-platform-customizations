@@ -22,7 +22,7 @@ function runScript(script, args, env) {
   })
 }
 
-test("defaults mode stages every template before setting explicit tenant default", async (t) => {
+test("defaults mode stages only selected template before setting explicit tenant default", async (t) => {
   const requests = []
   const server = http.createServer((request, response) => {
     requests.push({ method: request.method, url: request.url })
@@ -43,8 +43,6 @@ test("defaults mode stages every template before setting explicit tenant default
   assert.equal(result.status, 0, result.output)
   assert.deepEqual(requests.map(({ method, url }) => `${method} ${url}`), [
     "GET /api/v1/quotation-templates/qarmour",
-    "POST /api/v1/quotation-templates",
-    "GET /api/v1/quotation-templates/citruscloud",
     "POST /api/v1/quotation-templates",
     "PATCH /api/v1/quotation-templates/default",
   ])
@@ -69,6 +67,28 @@ test("defaults mode requires an explicit default code before making API requests
 
   assert.notEqual(result.status, 0)
   assert.match(result.output, /QUOTATION_TEMPLATE_CODE is required for defaults mode/)
+  assert.deepEqual(requests, [])
+})
+
+test("defaults mode rejects an unknown code before making API requests", async (t) => {
+  const requests = []
+  const server = http.createServer((request, response) => {
+    requests.push({ method: request.method, url: request.url })
+    response.writeHead(200, { "content-type": "application/json" })
+    response.end(JSON.stringify({ data: {} }))
+  })
+  await new Promise((resolve) => server.listen(0, "127.0.0.1", resolve))
+  t.after(() => server.close())
+
+  const { port } = server.address()
+  const result = await runScript("scripts/bootstrap-quotation-templates.mjs", ["defaults"], {
+    CRM_API_BASE_URL: `http://127.0.0.1:${port}`,
+    CRM_API_KEY: "test-api-key",
+    QUOTATION_TEMPLATE_CODE: "unknown",
+  })
+
+  assert.notEqual(result.status, 0)
+  assert.match(result.output, /QUOTATION_TEMPLATE_CODE must match a configured template code/)
   assert.deepEqual(requests, [])
 })
 
