@@ -1,8 +1,8 @@
 <div class="q-template q-template--cc">
   <header class="q-header">
-    <div class="q-logo"><img src="{{logoUrl}}" alt="{{entityName}}"></div>
+    <div class="q-logo"><img src="{{logoUrl}}" alt="{{entityName}} logo"></div>
     <div class="q-company">
-      <div class="q-company__name">{{entityName}} {{entityRegistrationNo}}</div>
+      <div class="q-company__name">{{entityName}} <span>{{entityRegistrationNo}}</span></div>
       <div class="q-company__address">{{companyAddress}}</div>
     </div>
   </header>
@@ -11,43 +11,75 @@
 
   <section class="q-customer-meta">
     <div class="q-customer">
-      <div class="q-customer__to">To:</div>
-      <strong>{{customerName}}</strong>
-      <div>{{customerCode}}</div>
-      <dl>
-        <dt>Attn:</dt><dd>{{customerContact}}</dd>
-        <dt>Tel:</dt><dd>{{customerPhone}}</dd>
-        <dt>Email:</dt><dd>{{customerEmail}}</dd>
-        <dt>Project:</dt><dd>{{projectName}}</dd>
-      </dl>
+      <div class="q-customer__recipient">
+        <span class="q-customer__to">To:</span>
+        <div>
+          <strong>{{customerName}}</strong>
+          <span class="q-customer__address">{{customerCode}}</span>
+        </div>
+      </div>
+      <div class="q-customer__fields">
+        <div><span>Attn:</span><span>{{customerContact}}</span></div>
+        <div><span>Project:</span><span>{{projectName}}</span></div>
+        <div><span>Email:</span><span>{{customerEmail}}</span></div>
+      </div>
     </div>
-    <dl class="q-meta">
-      <dt>Ref. No</dt><dd>{{quoteNumber}}</dd>
-      <dt>Date</dt><dd>{{quoteDate}}</dd>
-      <dt>Currency</dt><dd>{{currency}}</dd>
-      <dt>Delivery</dt><dd>{{delivery}}</dd>
-      <dt>Payment Term</dt><dd>{{paymentTerm}}</dd>
-      <dt>Quote Validity</dt><dd>{{quoteValidity}}</dd>
-      <dt>Price</dt><dd>{{price}}</dd>
-    </dl>
+    <div class="q-meta">
+      <div><span>Ref. No</span><span>:</span><span>{{quoteNumber}}</span></div>
+      <div><span>Date</span><span>:</span><span>{{quoteDate}}</span></div>
+      <div><span>Currency</span><span>:</span><span>{{currency}}</span></div>
+      <div><span>Delivery</span><span>:</span><span>{{delivery}}</span></div>
+      <div><span>Payment Term</span><span>:</span><span>{{paymentTerm}}</span></div>
+      <div><span>Quote Validity</span><span>:</span><span>{{quoteValidity}}</span></div>
+      <div><span>Price</span><span>:</span><span>{{price}}</span></div>
+    </div>
   </section>
 
   <table class="q-lines">
-    <thead><tr><th>Item</th><th>SKU</th><th>Description</th><th>QTY</th><th>UOM</th><th>Unit Price<br>{{currency}}</th><th>Subtotal<br>{{currency}}</th><th>Total Price<br>{{currency}}</th></tr></thead>
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>SKU</th>
+        <th>Description</th>
+        <th>QTY</th>
+        <th>UOM</th>
+        <th>Unit Price<br>{{currency}}</th>
+        <th>Subtotal<br>{{currency}}</th>
+        <th>Total Price<br>{{currency}}</th>
+      </tr>
+    </thead>
     <tbody>
       {{#each lines}}
-        <tr><td>{{@index}}</td><td>{{sku}}</td><td>{{description}}</td><td>{{quantity}}</td><td>{{uom}}</td><td>{{unitPrice}}</td><td>{{lineSubtotal}}</td><td>{{lineTotal}}</td></tr>
+        <tr>
+          <td>{{@index}}</td>
+          <td>{{sku}}</td>
+          <td>{{description}}</td>
+          <td>{{quantity}}</td>
+          <td>{{uom}}</td>
+          <td>{{unitPrice}}</td>
+          <td>{{lineSubtotal}}</td>
+          <td>{{lineTotal}}</td>
+        </tr>
       {{/each}}
     </tbody>
   </table>
 
   <section class="q-total-block">
-    <div class="q-notes">Note:<br>{{notes}}</div>
-    <dl class="q-totals"><dt>Total (excl. of SST)</dt><dd>{{subtotal}}</dd><dt>{{taxLabel}}</dt><dd>{{taxTotal}}</dd><dt>Total (Inclusive of SST)</dt><dd>{{total}}</dd></dl>
+    <div class="q-notes"><span>Note:</span><span>{{notes}}</span></div>
+    <div class="q-totals">
+      <div><span>Total (excl. of SST)</span><span>{{subtotal}}</span></div>
+      <div><span>{{taxLabel}}</span><span>{{taxTotal}}</span></div>
+      <div><span>Total (Inclusive of SST)</span><span>{{total}}</span></div>
+    </div>
   </section>
 
-  <div class="q-reference">**Please Quote Our Reference Number When Placing An Order**</div>
-  <div class="q-prepared">Prepared by,<br><strong>{{preparedBy}}</strong><br>{{preparedByEmail}}</div>
+  <section class="q-signoff">
+    <div class="q-reference">**Please Quote Our Reference Number When Placing An Order**</div>
+    <div class="q-prepared">Prepared by,<br><strong>{{preparedBy}}</strong><br>{{preparedByEmail}}</div>
+  </section>
   <p class="q-disclaimer">This Quotation is computer generated and no signature is required.</p>
-  <footer class="q-footer"><span>{{entityName}} w: {{companyWebsite}} e: {{companyEmail}} p: {{companyPhone}}</span><span>1</span></footer>
+  <footer class="q-footer">
+    <span>Quandatics (M) Sdn Bhd w: {{companyWebsite}} &nbsp;&nbsp; e:{{companyEmail}} &nbsp;&nbsp; p:{{companyPhone}}</span>
+    <span>1</span>
+  </footer>
 </div>
