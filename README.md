@@ -30,6 +30,17 @@ export CRM_API_KEY="qdk_..."
 ./scripts/verify-quotation-templates.sh
 ```
 
+For production (`app.quandatics.com`), use a tenant API key from a secret manager or a local shell only:
+
+```bash
+export CRM_API_BASE_URL="https://app.quandatics.com"
+export CRM_API_KEY="qdk_..."
+pnpm bootstrap
+pnpm verify
+```
+
+The API key is tenant-scoped and is never committed. Bootstrap stores the template in the production database; assignment is a separate account-scoped API call, so a template can be staged before it is enabled for an account.
+
 ## Layout
 
 - `modules/quotation/manifest.json` - package/module metadata.

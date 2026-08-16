@@ -6,5 +6,5 @@ REPO_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
 
 cd "${REPO_ROOT}"
 
+node ./scripts/validate-quotation-templates.mjs
 node ./scripts/bootstrap-quotation-templates.mjs "${1:-apply}"
-
