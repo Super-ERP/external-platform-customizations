@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>qarmour quotation fixture</title>
+  <style>
+    @page { size: A4; margin: 0; }
+    html, body { width: 210mm; min-height: 297mm; margin: 0; padding: 0; background: #fff; }
+    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.q-template--qar,
+.q-template--qar * { box-sizing: border-box; }
+.q-template--qar { position: relative; width: 210mm; min-height: 297mm; padding: 15mm 21mm 15mm 18mm; color: #000; background: #fff; font: 9px/1.25 Arial, Helvetica, sans-serif; }
+.q-template--qar .q-header { display: grid; grid-template-columns: 18mm 1fr; gap: 8mm; align-items: start; height: 26mm; padding: 0 0 2mm 25mm; border-bottom: 1px solid #000; }
+.q-template--qar .q-logo img { display: block; width: 18mm; height: 18mm; object-fit: contain; object-position: center; }
+.q-template--qar .q-company { padding-top: 0.5mm; }
+.q-template--qar .q-company__name { font-size: 10px; font-weight: 700; text-transform: uppercase; }
+.q-template--qar .q-company__address { white-space: pre-line; text-transform: uppercase; }
+.q-template--qar .q-title { height: 8mm; margin: 0; padding-top: 0.8mm; text-align: center; font-size: 16px; line-height: 1; }
+.q-template--qar .q-customer-meta { display: grid; grid-template-columns: 63% 37%; height: 42mm; }
+.q-template--qar .q-customer { position: relative; }
+.q-template--qar .q-customer::before { position: absolute; inset: 0 16mm 2mm 6.5mm; background: linear-gradient(#000, #000) left top / 10mm 1px no-repeat, linear-gradient(#000, #000) right top / 21mm 1px no-repeat, linear-gradient(#000, #000) left bottom / 10mm 1px no-repeat, linear-gradient(#000, #000) right bottom / 21mm 1px no-repeat, linear-gradient(#000, #000) left top / 1px 5mm no-repeat, linear-gradient(#000, #000) right top / 1px 5mm no-repeat, linear-gradient(#000, #000) left bottom / 1px 5mm no-repeat, linear-gradient(#000, #000) right bottom / 1px 5mm no-repeat; content: ""; }
+.q-template--qar .q-customer__recipient { position: absolute; top: 1.5mm; right: 17mm; left: 7.5mm; display: grid; grid-template-columns: 20mm 1fr; }
+.q-template--qar .q-customer__recipient strong,
+.q-template--qar .q-customer__recipient div > span { display: block; }
+.q-template--qar .q-customer__fields { position: absolute; right: 17mm; bottom: 3mm; left: 7.5mm; }
+.q-template--qar .q-customer__fields > div { display: grid; grid-template-columns: 20mm 1fr; min-height: 5mm; }
+.q-template--qar .q-meta { padding-top: 1.5mm; }
+.q-template--qar .q-meta > div { display: grid; grid-template-columns: 24mm 3mm 1fr; min-height: 5.7mm; }
+.q-template--qar .q-lines { width: 100%; height: 128mm; border: 1px solid #000; border-bottom: 3px double #000; border-collapse: collapse; table-layout: fixed; }
+.q-template--qar .q-lines th,
+.q-template--qar .q-lines td { border-right: 1px solid #000; padding: 1mm; font-weight: 400; }
+.q-template--qar .q-lines th:last-child,
+.q-template--qar .q-lines td:last-child { border-right: 0; }
+.q-template--qar .q-lines thead { height: 9mm; }
+.q-template--qar .q-lines thead th { border-bottom: 1px solid #000; text-align: right; vertical-align: middle; }
+.q-template--qar .q-lines thead th:first-child { text-align: center; }
+.q-template--qar .q-lines thead th:nth-child(2) { text-align: center; }
+.q-template--qar .q-lines tbody { height: 95mm; }
+.q-template--qar .q-lines tbody td { text-align: right; vertical-align: top; white-space: pre-line; }
+.q-template--qar .q-lines tbody td:first-child { text-align: center; }
+.q-template--qar .q-lines tbody td:nth-child(2) { text-align: left; }
+.q-template--qar .q-lines__fill { height: 100%; }
+.q-template--qar .q-lines tfoot { height: 24mm; border-top: 1px solid #000; }
+.q-template--qar .q-lines tfoot tr { height: 8mm; }
+.q-template--qar .q-lines tfoot th,
+.q-template--qar .q-lines tfoot td { text-align: right; vertical-align: middle; }
+.q-template--qar .q-lines th:nth-child(1), .q-template--qar .q-lines td:nth-child(1) { width: 4%; }
+.q-template--qar .q-lines th:nth-child(2), .q-template--qar .q-lines td:nth-child(2) { width: 48%; }
+.q-template--qar .q-lines th:nth-child(3), .q-template--qar .q-lines td:nth-child(3) { width: 12%; }
+.q-template--qar .q-lines th:nth-child(4), .q-template--qar .q-lines td:nth-child(4) { width: 16%; }
+.q-template--qar .q-lines th:nth-child(5), .q-template--qar .q-lines td:nth-child(5) { width: 20%; }
+.q-template--qar .q-reference { margin-top: 3mm; font-weight: 700; }
+.q-template--qar .q-disclaimer { margin: 0.6mm 0 0; font-size: 8px; font-style: italic; }
+
+  </style>
+</head>
+<body>
+<div class="q-template q-template--qar">
+  <header class="q-header">
+    <div class="q-logo"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDAgMTQwIj48Y2lyY2xlIGN4PSI3MCIgY3k9IjcwIiByPSI0OCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNjkwMGE4IiBzdHJva2Utd2lkdGg9IjI0IiBzdHJva2UtZGFzaGFycmF5PSIyMTAgOTIiIHRyYW5zZm9ybT0icm90YXRlKDIyIDcwIDcwKSIvPjxwYXRoIGQ9Ik03MiAxMTdDMTAxIDExMSAxMjEgODkgMTIzIDYyTDk5IDc1Qzk1IDg4IDg1IDk3IDcwIDEwMFoiIGZpbGw9IiMwMDhmYzUiLz48cGF0aCBkPSJNOTUgMjlDMTA5IDQwIDExOCA1MyAxMjEgNjhMMTAxIDc3QzEwMSA2MSA5NCA0OSA4MiA0MVoiIGZpbGw9IiNlZjU4NGQiLz48L3N2Zz4=" alt="Q ARMOUR SDN BHD logo"></div>
+    <div class="q-company">
+      <div class="q-company__name">Q ARMOUR SDN BHD 202301022845 (1516768 A)</div>
+      <div class="q-company__address">A-08-01 &amp; 02, EKOCHERAS, NO. 693, JALAN CHERAS BATU 5,
+56000 KUALA LUMPUR.</div>
+      <div>By: Finance Team</div>
+      <div>Tel: +603-2857 8098 &nbsp;&nbsp; Email: finance@qarmour.com</div>
+    </div>
+  </header>
+
+  <h1 class="q-title">QUOTATION</h1>
+
+  <section class="q-customer-meta">
+    <div class="q-customer">
+      <div class="q-customer__recipient">
+        <span>To:</span>
+        <div><strong>QUANDATICS (M) SDN BHD</strong><span>QDK-001</span></div>
+      </div>
+      <div class="q-customer__fields">
+        <div><span>Attn:</span><span>Finance Team</span></div>
+        <div><span>Tel :</span><span>+603-2857 8098</span></div>
+        <div><span>Email:</span><span>finance@quandatics.com</span></div>
+      </div>
+    </div>
+    <div class="q-meta">
+      <div><span>Ref. No</span><span>:</span><span>Q30QAR-0001-01</span></div>
+      <div><span>Date</span><span>:</span><span>20/08/2026</span></div>
+      <div><span>Currency</span><span>:</span><span>RM</span></div>
+      <div><span>Delivery</span><span>:</span><span>14 working-days upon PO</span></div>
+      <div><span>Payment Term</span><span>:</span><span>30 days</span></div>
+      <div><span>Quote Validity</span><span>:</span><span>30 days</span></div>
+      <div><span>Price</span><span>:</span><span>DDP MAL, MYR</span></div>
+    </div>
+  </section>
+
+  <table class="q-lines">
+    <thead>
+      <tr><th>No</th><th>Description</th><th>QTY</th><th>Unit Price</th><th>Total Price</th></tr>
+    </thead>
+    <tbody>
+      
+        <tr><td>1</td><td>Quotation template integration
+Configuration and deployment support</td><td>1</td><td>12,000.00</td><td>12,000.00</td></tr>
+      
+      <tr class="q-lines__fill" aria-hidden="true"><td></td><td></td><td></td><td></td><td></td></tr>
+    </tbody>
+    <tfoot>
+      <tr><td></td><td></td><td></td><th>Total (RM)</th><td>12,000.00</td></tr>
+      <tr><td></td><td></td><td></td><th>SST (RM)</th><td>960.00</td></tr>
+      <tr><td></td><td></td><td></td><th>Total with SST (RM)</th><td>12,960.00</td></tr>
+    </tfoot>
+  </table>
+
+  <div class="q-reference">**Please Quote Our Reference Number When Placing An Order**</div>
+  <p class="q-disclaimer">This Quotation is computer generated and no signature is required.</p>
+</div>
+
+</body>
+</html>

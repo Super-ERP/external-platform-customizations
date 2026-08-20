@@ -59,6 +59,11 @@ export CHROME_BIN="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 rtk pnpm render -- --out-dir artifacts/quotation-fixtures
 ```
 
+Checked-in sample outputs live under `artifacts/quotation-fixtures/`:
+
+- `qarmour.html` and `qarmour.pdf`
+- `citruscloud.html` and `citruscloud.pdf`
+
 Stage templates without changing the tenant default:
 
 ```bash
